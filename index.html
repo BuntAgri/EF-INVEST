@@ -1,79 +1,135 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.E. BATIMENT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EF INVEST — Aménagement & Construction</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #111827; line-height: 1.6; }
-    header, footer { background: #1f2937; color: white; text-align: center; padding: 30px; }
-    nav a { color: #fbbf24; margin: 0 12px; text-decoration: none; font-weight: 600; }
-    section { padding: 60px 20px; max-width: 1200px; margin: auto; text-align: center; }
-    h2 { color: #1f2937; margin-bottom: 20px; font-size: 2.4em; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .gallery img { width: 100%; border-radius: 8px; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;
+    :root{
+      --slate:#0f1720;     /* header/nav */
+      --orange:#f59e0b;    /* accent     */
+      --bg:#f6f8fb;        /* page bg    */
+      --card:#ffffff;      /* cards      */
+      --ink:#1e2229;
     }
-    iframe { width: 100%; height: 300px; border: 0; border-radius: 8px; margin-top: 20px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:var(--slate);text-decoration:none}
+
+    header{background:var(--slate);color:#fff;text-align:center;padding:28px 16px;border-bottom:5px solid var(--orange)}
+    header h1{margin:0;font-size:2.2rem}
+    header p{margin:6px 0 0;opacity:.95}
+
+    nav{background:#111827;text-align:center;padding:12px}
+    nav a{color:#fff;margin:0 14px;font-weight:700}
+    nav a:hover{color:var(--orange)}
+
+    /* hero */
+    .hero{max-width:1100px;margin:22px auto;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center;padding:0 14px}
+    .hero img{width:100%;border-radius:12px;border:4px solid var(--orange);object-fit:cover}
+    .hero .box{background:var(--card);border-left:6px solid var(--orange);border-radius:12px;padding:16px}
+
+    .section{max-width:1100px;margin:22px auto;background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .section h2{margin:0 0 12px;color:var(--slate)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    ul{margin:0;padding-left:18px;line-height:1.8}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:8px}
+    .card{background:#fffaf3;border:1px solid #ffe2ba;border-radius:10px;padding:12px}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+    .gallery img{width:100%;border-radius:10px;border:2px solid var(--orange);object-fit:cover;aspect-ratio:4/3}
+
+    .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--orange);color:#1a1205;padding:12px 16px;border-radius:10px;font-weight:800}
+    .btn.secondary{background:#fff;color:var(--slate);border:2px solid var(--slate)}
+
+    footer{background:var(--slate);color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:5px solid var(--orange)}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>V.E. BATIMENT</h1>
+  <header>
+    <h1>EF INVEST</h1>
+    <p>Aménagement foncier • VRD • Construction — Provence-Alpes-Côte d’Azur</p>
+  </header>
+
   <nav>
-    <a href="#about">Présentation</a>
+    <a href="#about">À propos</a>
     <a href="#services">Services</a>
-    <a href="#gallery">Galerie</a>
+    <a href="#galerie">Galerie</a>
     <a href="#contact">Contact</a>
-    <a href="#map">Adresse</a>
   </nav>
-</header>
 
-<section id="about">
-  <h2>Présentation</h2>
-  <p>Basée à Les Mureaux, V.E. BATIMENT est une entreprise spécialisée dans la maçonnerie générale et les gros travaux de construction. Grâce à une équipe qualifiée, nous réalisons des chantiers sur mesure en respectant les normes de qualité et de sécurité.</p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://avatars.mds.yandex.net/i?id=a1602db96632af72b2f6941d1c3a85d0ea24c801-8177077-images-thumbs&n=13" alt="Chantier d’aménagement">
+    <div class="box">
+      <h2 style="margin:0 0 6px">Du terrain nu au projet livré.</h2>
+      <p>Études, viabilisation, terrassement et pilotage de chantier avec un engagement ferme sur la sécurité, la qualité et les délais.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+33746346708">Appeler : +33 7 46 34 67 08</a>
+        <a class="btn secondary" href="mailto:contact@suprde.shop">Écrire : contact@suprde.shop</a>
+      </div>
+    </div>
+  </section>
 
-<section id="services">
-  <h2>Nos Services</h2>
-  <p>Gros œuvre de bâtiment, travaux de maçonnerie, fondations, rénovation structurelle, et accompagnement personnalisé pour tous vos projets de construction.</p>
-</section>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>À propos</h2>
+    <div class="two-col">
+      <p><strong>EF INVEST</strong> intervient sur l’<em>aménagement de terrains</em>, le <em>VRD</em> et la <em>construction</em> pour promoteurs, collectivités et privés. Une équipe proche du terrain, process clair, reporting régulier.</p>
+      <p>Adresse : <strong>180 Chemin Bosco, 06360 Èze, Provence-Alpes-Côte d’Azur, France</strong>.</p>
+    </div>
+  </section>
 
-<section id="gallery">
-  <h2>Galerie</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1570126681032-3a7c41f13b0d?auto=format&fit=crop&w=800&q=80" alt="chantier 1">
-    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="chantier 2">
-    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80" alt="chantier 3">
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Nos services</h2>
+    <div class="features">
+      <div class="card"><strong>Études & maîtrise d’œuvre</strong><br/>Topographie, dossiers, autorisations.</div>
+      <div class="card"><strong>Viabilisation & VRD</strong><br/>Voiries, réseaux, drainage, éclairage.</div>
+      <div class="card"><strong>Terrassement & génie civil</strong><br/>Mouvements de terres, soutènements.</div>
+      <div class="card"><strong>Pilotage de chantier</strong><br/>Coordination corps d’état, qualité & sécurité.</div>
+      <div class="card"><strong>Livraison & garanties</strong><br/>Réception, DOE, suivi post-travaux.</div>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Contactez-nous</h2>
-  <p>Email : contact@vebatiment.shop</p>
-  <p>Téléphone : +33 6 05 99 64 90</p>
-  <form class="contact-form">
-    <input type="text" placeholder="Nom">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Votre message"></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+  <!-- GALERIE -->
+  <section id="galerie" class="section">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="https://avatars.mds.yandex.net/i?id=d7da570db153cab73bd41e9f053e475cbb602718-16296664-images-thumbs&n=13" alt="VRD & réseaux">
+      <img src="https://avatars.mds.yandex.net/i?id=1f3ae9fd7d106923fc0a87cf4b0038f6e87f447a-5233014-images-thumbs&n=13" alt="Terrassement">
+      <img src="https://avatars.mds.yandex.net/i?id=0d34c2a407c12fad18584accbe27770c8bbf9744-12373036-images-thumbs&n=13" alt="Voirie">
+      <img src="https://avatars.mds.yandex.net/i?id=f88e2d0f1da3361235aa45f19b2f8390430e1ab4-5391120-images-thumbs&n=13" alt="Chantier routier">
+    </div>
+  </section>
 
-<section id="map">
-  <h2>Adresse</h2>
-  <p>66 Avenue du Maréchal Foch, 78130 Les Mureaux, France</p>
-  <iframe src="https://www.google.com/maps?q=66+Avenue+du+Mar%C3%A9chal+Foch,+Les+Mureaux,+France&output=embed" allowfullscreen loading="lazy"></iframe>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="two-col">
+      <div>
+        <p>📧 <strong>Email :</strong> <a href="mailto:contact@suprde.shop">contact@suprde.shop</a></p>
+        <p>📞 <strong>Téléphone :</strong> <a href="tel:+33746346708">+33 7 46 34 67 08</a></p>
+        <p>📍 <strong>Adresse :</strong> 180 Chemin Bosco, 06360 Èze (FR)</p>
+      </div>
+      <div>
+        <p><em>Horaires</em></p>
+        <ul>
+          <li>Lun–Ven : 8h00 – 18h00</li>
+          <li>Samedi : 9h00 – 13h00</li>
+          <li>Dimanche : Fermé</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 V.E. BATIMENT — Tous droits réservés
-</footer>
+  <footer>
+    <p>&copy; 2025 EF INVEST — Aménagement & Construction</p>
+  </footer>
 
 </body>
 </html>
